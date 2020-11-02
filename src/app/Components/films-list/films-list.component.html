@@ -1,0 +1,13 @@
+<div class="card" style="width: 18rem;" *ngFor="let film of films">
+    <img src="https://www.film.ru/sites/default/files/movies/posters/20782595-1153426.jpg" class="card-img-top" alt="..." />
+    <div class="card-body">
+        <h5 class="card-title">{{film.name}}​​</h5>
+        <p class="card-text">Year: {{film.year}}​​</p>
+        <p class="card-text">Genre: {{film.categoryName}}​​</p>
+        <p class="card-text">{{film.description}}​​</p>
+        <button (click)="removeFilm(film.id)" class="btn btn-danger">Delete</button>
+        <button [routerLink]="['/edit-film',film.id]" routerLinkActive="router-link-active"  class="btn btn-warning">Edit</button>
+        
+    </div>
+</div>
+<button [routerLink]="['/add-film']" routerLinkActive="router-link-active">Add Film</button>
